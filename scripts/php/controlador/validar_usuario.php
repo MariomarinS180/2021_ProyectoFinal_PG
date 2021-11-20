@@ -11,15 +11,15 @@
     
 
     if($conexion){
-        if(isset($_POST['correo_usu']) && isset($_POST['pass_usu']) 
-            && !empty($_POST['correo_usu']) && !empty($_POST['pass_usu'])){
+        if(isset($_POST['inputEmail']) && isset($_POST['inputPassword']) 
+            && !empty($_POST['inputEmail']) && !empty($_POST['inputPassword'])){
             
-            $u=$_POST['correo_usu'];
-            $p=$_POST['pass_usu'];
+            $u=$_POST['inputEmail'];
+            $p=$_POST['inputPassword'];
             $u_cifrado = sha1($u); 
             $p_cifrado = sha1($p);
             
-                $sql = "SELECT * FROM Datos WHERE Usuario ='$u_cifrado' AND Contraeña ='$p_cifrado'"; 
+                $sql = "SELECT * FROM usuarios where correo ='$u_cifrado' AND contra ='$p_cifrado'"; 
 
                 $res = mysqli_query($conexion, $sql);
 
