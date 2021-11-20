@@ -1,7 +1,7 @@
 <?php
     //echo "<h3>login</h3>"
     include('../conexionesBD/conexionBD_usuarios.php');
-    $con = new ConexionBDEscuela(); 
+    $con = new ConexionBDUsuarios(); 
     $conexion = $con->getConexion(); 
     //var_dump($conexion); 
     //inputEmail
@@ -24,15 +24,14 @@
                 $res = mysqli_query($conexion, $sql);
 
                 if(mysqli_num_rows($res)==1){
-                    //echo "MAGIA MAGIA con Sesiones"; 
                     session_start(); 
-
                     $_SESSION['usuario'] = $u; 
                     $_SESSION['u_valido'] = true; 
-
-                    header('location:../vista/fomulario_altas.php');
+                    header('location:../vista/formulario_principal.php');
                 }else{
-                    echo "mejor me dedico a las redes "; 
+                    
+                    header('location: ../vista/login.html');
+                    //echo "MEJOR ME DEDICO A LAS REDES "; 
                 }
                 //echo "entrando al if";      
         }else{

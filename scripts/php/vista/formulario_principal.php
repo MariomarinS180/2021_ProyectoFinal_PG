@@ -1,3 +1,11 @@
+<?php
+session_start(); 
+if( $_SESSION['u_valido'] == false)
+    //header("location:pagina_prohibida.html");
+    header('location: login.html')
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
