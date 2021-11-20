@@ -1,5 +1,5 @@
 <?php
-    class ConexionBDEscuela{
+    class ConexionBDUsuarios{
         private $conexion;
         private $host = 'localhost';
         private $usuario = 'root'; //MySQL
