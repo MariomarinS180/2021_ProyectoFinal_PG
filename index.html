@@ -30,6 +30,7 @@
     </noscript>
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <script src="scripts/javascript/validacionUsuarioRegistro.js"></script>
 
 
 
@@ -324,38 +325,38 @@
                     <form action="scripts/php/controlador/procesar_altas_usuarios.php" method="POST">
                         <div class="form-row">
                             <div class="form-group col-12 col-sm-6 pb-1 pt-1">
-                                <input type="text" name="nombre" class="form-control" placeholder="Nombre(s)" required>
+                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre(s)" required>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group col-12 pb-1 pt-1">
-                                <input type="text" name="apellidos" class="form-control" placeholder="Apellido(s)"
+                                <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Apellido(s)"
                                     required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 pb-1 pt-1">
                                 <label>Fecha de Nacimiento:</label>
-                                <input type="date" name="fecha" class="form-control" max="2003-12-31" required>
+                                <input type="date" name="fecha" id="fecha" class="form-control" max="2003-12-31" required>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group col-12 pb-1 pt-1">
-                                <input type="email" name="correo_usu" class="form-control"
+                                <input type="email" name="correo_usu" id="correo_usu" class="form-control"
                                     placeholder="Correo Electrónico" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 pb-1 pt-1">
-                                <input type="password" class="form-control" name="pass_usu" placeholder="Contraseña"
+                                <input type="password" class="form-control" name="pass_usu" id="pass_usu" placeholder="Contraseña"
                                     required>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary"
                                     data-bs-dismiss="modal">CANCELAR</button>
-                                <button type="submit" class="btn btn-success">REGISTRARSE</button>
+                                <button type="submit" class="btn btn-success" onclick="return validacionDatos()">REGISTRARSE</button>
                             </div>
                     </form>
                 </div>
@@ -366,11 +367,6 @@
     </div>
     </div>
     <!--FIN MODAL REGISTRARSE-->
-
-
-
-
-    <!-- FIN MODAL REGISTRARSE-->
 
     <!--ANIMACIÓN-->
     <input name="animation" type="hidden">
