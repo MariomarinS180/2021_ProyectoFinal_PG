@@ -9,8 +9,8 @@ class UsuarioDAO{
         $this->conexion = new ConexionBDUsuarios(); 
     }
     //AGREGAR USUARIOS
-    public function agregarUsuario($nombre, $ap_paterno, $ap_materno, $fecha_nac, $correo, $contra){
-        $sql = "INSERT INTO usuarios VALUES ('$nombre', '$ap_paterno', '$ap_materno', '$fecha_nac', ('$correo'), '$contra')";
+    public function agregarUsuario($nombre, $apellidos, $fecha_nac, $correo, $contra){
+        $sql = "INSERT INTO usuarios VALUES ('$nombre', '$apellidos', '$fecha_nac', '$correo', '$contra')";
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
     }

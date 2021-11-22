@@ -30,7 +30,7 @@
     <!--Fin del HEADER:-->
 
 
-    <form action="../controlador/procesar_altas_usuarios.php" method="post">
+    <form>
         <hr>
         INGRESE EL NOMBRE <input type="text" name="nombre">
         <br><br>
@@ -38,7 +38,7 @@
         <br><br>
         INGRESE EL Apellido Materno <input type="text" name="ap2">
         <br><br>
-        INGRESE EL Su Fecha de Nacimiento <input type="text" name="fecha">
+        INGRESE EL Su Fecha de Nacimiento <input type="date" name="fecha">
         <br><br>
         INGRESE su Correo Electrónico <input type="text" id="correo_usu" name="correo_usu">
         <br><br>

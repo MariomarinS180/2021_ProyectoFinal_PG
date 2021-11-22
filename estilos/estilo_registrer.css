@@ -1,7 +1,10 @@
 #header{
     background: darkcyan !important;
 }
-
 #footer{
     background-color: whitesmoke;
+}
+#modalContent{
+    background-image: url('../imgFondo.jpg');
+    height: 450px;
 }
