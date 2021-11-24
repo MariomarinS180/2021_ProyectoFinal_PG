@@ -12,7 +12,7 @@ class ConexionBDDreamhome{
         if(!$this->conexion)
             die("Error en conexion con MySQL" . mysqli_connect_error() . mysqli_connect_errno() );
         else
-            echo "<h1>Exito!</h1>";
+            echo "";
     }
     public function getConexion(){
         return $this->conexion;

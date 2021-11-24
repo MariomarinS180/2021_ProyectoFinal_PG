@@ -11,8 +11,16 @@ class DreamhomeDAO{
     public function agregarBranch($branchNo, $street, $city, $postcode){
         $sql = "INSERT INTO branch VALUES('$branchNo', '$street', '$city', '$postcode')";
         $res = mysqli_query($this->conexion->getConexion(), $sql);
+        echo json_decode($res);
         return $res;
     }
-}
 
+
+    public function mostrar(){
+        $sql = "SELECT * FROM branch";
+        $res = mysqli_query($this->conexion->getConexion(), $sql);
+        return $res;
+    }
+
+}
 ?>

@@ -55,7 +55,7 @@
                     </div>
             </div>
             <div class="col-7">
-                <table class="table table-striped table-bordered">
+                <table class="table table-striped table-bordered" id="tablaReg">
                     <thead>
                         <tr>
                             <th>Branch No</th>
@@ -83,6 +83,30 @@
             </div>
         </div>
     </div>
+
+    <?php
+    include('../modelo/dreamhomeDAO.php');
+    $branchDao = new DreamhomeDAO(); 
+    $res = $branchDao->mostrar(); 
+
+    if(mysqli_num_rows($res)>0){
+        echo "<table class=table table-striped table-bordered>";
+        while($fila = mysqli_fetch_assoc($res)){
+            printf("<tr>
+                        <td>".$fila['branchNo']."</td>".
+                        "<td>".$fila['street']."</td>".
+                        "<td>".$fila['city']."</td>".
+                        "<td>".$fila['postcode']."</td>".
+                        "<td> <a href='../modelo/dreamhomeDAO.php?branchNo=%s'> ELIMINAR</a> </td> </tr>", $fila['branchNo'] );
+        }
+
+    }else{
+        echo "SIN registros para mostrar";
+    }
+    echo "</table>";
+
+    ?>
+
 </body>
 
 </html>
