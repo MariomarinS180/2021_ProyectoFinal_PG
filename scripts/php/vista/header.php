@@ -98,6 +98,15 @@
             $('#mensaje').html("HOLA MUNDO CON JQUERY"); 
         });
 
+        $('#btnAgregar').click(function(e){
+            insert(); 
+        });
+        function insert(){
+            var datos = new FormData(); 
+            datos.append('BranchNo', $('#txtBranch').val()); 
+            console.log(datos.get('BranchNo')); 
+        }
+
     </script>
 
 
