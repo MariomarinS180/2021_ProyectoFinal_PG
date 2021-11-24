@@ -18,4 +18,3 @@ class ConexionBDDreamhome{
         return $this->conexion;
     }
 }
-?>

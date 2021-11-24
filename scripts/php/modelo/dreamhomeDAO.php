@@ -1,19 +1,18 @@
 <?php
 include('../conexionesBD/conexionBD_Dreamhome.php');
 
-class Dreamhome{
+class DreamhomeDAO{
     private $conexion;
 
     public function __construct(){
-        $this->conexion = new ConexionBDUsuarios(); 
+        $this->conexion = new ConexionBDDreamhome(); 
     }
-    //AGREGAR USUARIOS
-    public function agregarBranch($bNo, $st, $city, $pc){
-        $sql = "INSERT INTO branch VALUES ('$bNo', '$st', '$city', '$pc')";
+    //AGREGAR 
+    public function agregarBranch($branchNo, $street, $city, $postcode){
+        $sql = "INSERT INTO branch VALUES('$branchNo', '$street', '$city', '$postcode')";
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
     }
-
 }
 
 ?>

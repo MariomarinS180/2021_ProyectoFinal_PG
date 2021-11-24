@@ -1,54 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="shortcut icon" href="imagenes/Logo_Dreamhome.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../imagenes/Logo_Dreamhome.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <script src="../../javascript/validacionBranch.js"></script>
     <title>Dreamhome Inicio</title>
 </head>
-<body>
-    <div id="mensaje"> </div>
 
+<body>
     <div class="container">
-        <div class= "row">
-            <div class = "col-5">
-                <form action="">
+        <div class="row">
+            <div class="col-5">
                     <div class="card">
                         <div class="card-header">
                             Departamentos
                         </div>
                         <div class="card-body">
-                            <form action="">
+                            <form action="../controlador/procesar_abcc_dreamhome.php" method="POST">
                                 <div class="mb-3">
-                                  <label for="txtBranch" class="form-label">BranchNo</label>
-                                  <input type="text"
-                                    class="form-control" name="txtBranch" id="txtBranch" aria-describedby="helpId" placeholder="4 Caracteres">
+                                    <label for="txtBranch" class="form-label">BranchNo</label>
+                                    <input type="text" class="form-control" name="txtBranch" id="txtBranch"  placeholder="4 Caracteres">
                                 </div>
 
                                 <div class="mb-3">
-                                  <label for="txtStreet" class="form-label">Street</label>
-                                  <input type="text"
-                                    class="form-control" name="txtStreet" id="txtStreet" aria-describedby="helpId" placeholder="Nombre de la Calle">
+                                    <label for="txtStreet" class="form-label">Street</label>
+                                    <input type="text" class="form-control" name="txtStreet" id="txtStreet"  placeholder="Nombre de la Calle">
                                 </div>
 
                                 <div class="mb-3">
-                                  <label for="txtCity" class="form-label">City</label>
-                                  <input type="text"
-                                    class="form-control" name="txtCity" id="txtCity" aria-describedby="helpId" placeholder="Nombe de la Ciudad">
+                                    <label for="txtCity" class="form-label">City</label>
+                                    <input type="text" class="form-control" name="txtCity" id="txtCity" placeholder="Nombe de la Ciudad">
                                 </div>
 
                                 <div class="mb-3">
-                                  <label for="txtpostCode" class="form-label">PostCode</label>
-                                  <input type="text"
-                                    class="form-control" name="txtpostCode" id="txtpostCode" aria-describedby="helpId" placeholder="Codigo Postal">
+                                    <label for="txtpostCode" class="form-label">PostCode</label>
+                                    <input type="text" class="form-control" name="txtpostCode" id="txtpostCode"  placeholder="Codigo Postal">
                                 </div>
 
-                                <div class="btn-group" role="group" aria-label="">
-                                    <button id="btnAgregar"  type="button" class="btn btn-success">Agregar</button>
+                                <div class="btn-group" role="group" >
+                                    <button type="submit"  class="btn btn-success" onclick=" return validacionHeader()" >Agregar</button>
                                     <button id="btnEditar" type="button" class="btn btn-warning">Editar</button>
                                     <button id="btnCancelar" type="button" class="btn btn-primary">Cancelar</button>
                                 </div>
@@ -58,9 +53,8 @@
                             Footer
                         </div>
                     </div>
-                </form>
             </div>
-            <div class = "col-7">
+            <div class="col-7">
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
@@ -86,31 +80,9 @@
                         </tr>
                     </tbody>
                 </table>
-                
             </div>
-
         </div>
     </div>
-
-
-    <script>
-        $(document).ready(function(){
-            $('#mensaje').html("HOLA MUNDO CON JQUERY"); 
-        });
-
-        $('#btnAgregar').click(function(e){
-            insert(); 
-        });
-        function insert(){
-            var datos = new FormData(); 
-            datos.append('BranchNo', $('#txtBranch').val()); 
-            console.log(datos.get('BranchNo')); 
-        }
-
-    </script>
-
-
-
-
 </body>
+
 </html>

@@ -14,8 +14,5 @@ class UsuarioDAO{
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
     }
-
-
-
 }
 ?>

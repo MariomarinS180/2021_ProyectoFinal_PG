@@ -25,4 +25,5 @@ $uDAO = new UsuarioDAO();
         header('location: ../vista/login.html');
         //enviar un mensaje de FALLO a traves de SESIONES
     }
+
 ?>
