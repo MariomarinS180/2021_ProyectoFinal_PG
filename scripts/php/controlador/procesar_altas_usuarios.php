@@ -1,5 +1,4 @@
 <?php
-
 include('usuariosDAO.php'); 
 $uDAO = new UsuarioDAO(); 
 
@@ -8,7 +7,7 @@ $uDAO = new UsuarioDAO();
     $fecha = $_POST["fecha"]; 
     $correo = $_POST["correo_usu"]; 
     $contra = $_POST["pass_usu"]; 
-    $res = $uDAO->agregarUsuario($nombre,$p1,$fecha,$correo,$contra); 
+    $res = $uDAO->agregarUsuario($nombre,$p1,$fecha,sha1($correo),$contra); 
 
     if($res){
         //echo "YA CASI SOY INGENIERO INMORTAL !!!!";

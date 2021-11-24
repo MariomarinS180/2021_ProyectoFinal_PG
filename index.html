@@ -70,18 +70,15 @@
                                 href="scripts/php/vista/login.html">INICIAR SESIÓN</a></li>
                     </ul>
 
-                    <div class="navbar-buttons mbr-section-btn"><a class="btn btn-success display-4"
-                            data-bs-toggle="modal" href="#modalCompra">REGISTRARSE</a></div>
+                    <div class="navbar-buttons mbr-section-btn">
+                        <a class="btn btn-success display-4" data-bs-toggle="modal" href="#modalCompra">REGISTRARSE</a>
+                    </div>
                 </div>
             </div>
         </nav>
     </section>
 
     <section data-bs-version="5.1" class="header14 cid-sFzxmVl7J6" id="header14-1f">
-
-
-
-
 
         <div class="container">
             <div class="row justify-content-center align-items-center">
@@ -252,18 +249,10 @@
 
     <section data-bs-version="5.1" class="footer3 cid-sFCygHrmNf" once="footers" id="footer3-24">
 
-
-
-
-
         <div class="container">
             <div class="row align-center mbr-white">
                 <div class="row row-links">
                     <ul class="foot-menu">
-
-
-
-
 
                         <li class="foot-menu-item mbr-fonts-style display-7">Inicio</li>
                         <li class="foot-menu-item mbr-fonts-style display-7">Soporte</li>
@@ -272,10 +261,6 @@
                 </div>
                 <div class="row social-row">
                     <div class="social-list align-right pb-2">
-
-
-
-
 
 
                         <div class="soc-item">
@@ -325,20 +310,22 @@
                     <form action="scripts/php/controlador/procesar_altas_usuarios.php" method="POST">
                         <div class="form-row">
                             <div class="form-group col-12 col-sm-6 pb-1 pt-1">
-                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre(s)" required>
+                                <input type="text" name="nombre" id="nombre" class="form-control"
+                                    placeholder="Nombre(s)" required>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group col-12 pb-1 pt-1">
-                                <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Apellido(s)"
-                                    required>
+                                <input type="text" name="apellidos" id="apellidos" class="form-control"
+                                    placeholder="Apellido(s)" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 pb-1 pt-1">
                                 <label>Fecha de Nacimiento:</label>
-                                <input type="date" name="fecha" id="fecha" class="form-control" max="2003-12-31" required>
+                                <input type="date" name="fecha" id="fecha" class="form-control" max="2003-12-31"
+                                    required>
                             </div>
                         </div>
 
@@ -350,19 +337,18 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 pb-1 pt-1">
-                                <input type="password" class="form-control" name="pass_usu" id="pass_usu" placeholder="Contraseña"
-                                    required>
+                                <input type="password" class="form-control" name="pass_usu" id="pass_usu"
+                                    placeholder="Contraseña" required>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary"
                                     data-bs-dismiss="modal">CANCELAR</button>
-                                <button type="submit" class="btn btn-success" onclick="return validacionDatos()">REGISTRARSE</button>
+                                <button type="submit" class="btn btn-success"
+                                    onclick="return validacionDatos()">REGISTRARSE</button>
                             </div>
                     </form>
                 </div>
-
             </div>
-
         </div>
     </div>
     </div>
