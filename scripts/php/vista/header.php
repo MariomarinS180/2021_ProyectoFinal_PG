@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <link rel="shortcut icon" href="../../../imagenes/Logo_Dreamhome.png" type="image/x-icon">
     <meta charset="UTF-8">
@@ -13,6 +12,9 @@
 </head>
 
 <body>
+    <div class="encabezado">
+        <center> <h2> Aqui va el Header</h2></center> 
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-5">
@@ -80,7 +82,7 @@
                                         "<td>" . $fila['street'] . "</td>" .
                                         "<td>" . $fila['city'] . "</td>" .
                                         "<td>" . $fila['postcode'] . "</td>" .
-                                        "<td> <a href='../modelo/dreamhomeDAO.php?branchNo=%s'> ELIMINAR</a> </td> </tr>", $fila['branchNo']);
+                                        "<td> <a href='../controlador/procesar_bajas.php?branchNo=%s'> ELIMINAR</a> </td> </tr>", $fila['branchNo']);
                                 }
                             } else {
                                 echo "SIN registros para mostrar";

@@ -14,7 +14,11 @@ class DreamhomeDAO{
         echo json_decode($res);
         return $res;
     }
-
+    public function eliminarAlumno($branch){
+        $sql = "DELETE FROM branch WHERE branchNo='$branch'";
+        $res = mysqli_query($this->conexion->getConexion(), $sql);
+        return $res;
+    }
 
     public function mostrar(){
         $sql = "SELECT * FROM branch";
