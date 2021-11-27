@@ -19,6 +19,13 @@ class DreamhomeDAO{
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
     }
+    public function modificarBranch($branchNo, $street, $city, $postcode){
+        $sql = "UPDATE branch SET branchNo = '$branchNo', '$street', '$city', '$postcode' 
+        WHERE branchNo = '$branchNo'"; 
+        $res = mysqli_query($this->conexion->getConexion(),$sql); 
+        return $res; 
+    }
+
 
     public function mostrar(){
         $sql = "SELECT * FROM branch";

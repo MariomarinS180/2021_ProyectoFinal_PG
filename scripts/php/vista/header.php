@@ -12,6 +12,8 @@
 </head>
 
 <body>
+
+
     <div class="encabezado">
         <center> <h2> Aqui va el Header</h2></center> 
     </div>
@@ -45,7 +47,7 @@
                             </div>
 
                             <div class="btn-group" role="group">
-                                <button type="submit" class="btn btn-success" onclick=" return validacionHeader()">Agregar</button>
+                                <button type="submit" class="btn btn-success" onclick= " return validacionHeader()">Agregar</button>
                                 <button id="btnEditar" type="button" class="btn btn-warning">Editar</button>
                                 <button id="btnCancelar" type="button" class="btn btn-primary">Cancelar</button>
                             </div>
@@ -57,7 +59,7 @@
                 </div>
             </div>
             <div class="col-7">
-                <table class="table table-striped table-bordered" id="tablaReg">
+                <table class="table table-striped table-bordered table-hover" id="tablaReg">
                     <thead>
                         <tr>
                             <th>Branch No</th>
@@ -67,7 +69,7 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tabla">
                         <tr>
                             <?php
                             include('../modelo/dreamhomeDAO.php');
@@ -82,23 +84,40 @@
                                         "<td>" . $fila['street'] . "</td>" .
                                         "<td>" . $fila['city'] . "</td>" .
                                         "<td>" . $fila['postcode'] . "</td>" .
-                                        "<td> <a href='../controlador/procesar_bajas.php?branchNo=%s'> ELIMINAR</a> </td> </tr>", $fila['branchNo']);
+                                        "<td> <button class= 'btn btn-primary' id='seleccion'> SELECCIONAR </button> </td>".
+                                        "<td> <a href='../controlador/procesar_bajas.php?branchNo=%s' class= 'btn btn-danger'> ELIMINAR</a>  </td> </tr>", $fila['branchNo']);
                                 }
                             } else {
                                 echo "SIN registros para mostrar";
                             }
+
                             ?>
-                        </tr>
-                        <tr>
-                            <td scope="row"></td>
-                            <td></td>
-                            <td></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#seleccion').click(function(){
+                sacar();
+
+            });
+        });
+        function sacar()
+        {
+            $('#tabla td').each(function(){
+                let branch = $(this).find('td').eq(0).text(); 
+                let street = $(this).find('td').eq(1).text();  
+                let valor = "BranchNo: "+branch+"\nStreet: "+street+" ";
+
+                alert(valor) ; 
+            });
+        }
+
+    </script>
 
 
 
