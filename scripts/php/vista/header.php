@@ -84,7 +84,7 @@
                                         "<td>" . $fila['street'] . "</td>" .
                                         "<td>" . $fila['city'] . "</td>" .
                                         "<td>" . $fila['postcode'] . "</td>" .
-                                        "<td> <button class= 'btn btn-primary' id='seleccion'> SELECCIONAR </button> </td>".
+                                        "<td> <a class='btn btn-info' href='formulario_modificaciones.php?id=". $fila["branchNo"] ."' data-bs-toggle='modal'>SELECCIONAR1</a></td>".
                                         "<td> <a href='../controlador/procesar_bajas.php?branchNo=%s' class= 'btn btn-danger'> ELIMINAR</a>  </td> </tr>", $fila['branchNo']);
                                 }
                             } else {
