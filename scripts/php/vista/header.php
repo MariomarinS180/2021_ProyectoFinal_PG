@@ -99,26 +99,6 @@
         </div>
     </div>
 
-    <script>
-        $(document).ready(function(){
-            $('#seleccion').click(function(){
-                sacar();
-
-            });
-        });
-        function sacar()
-        {
-            $('#tabla td').each(function(){
-                let branch = $(this).find('td').eq(0).text(); 
-                let street = $(this).find('td').eq(1).text();  
-                let valor = "BranchNo: "+branch+"\nStreet: "+street+" ";
-
-                alert(valor) ; 
-            });
-        }
-
-    </script>
-
 
 
 </body>
