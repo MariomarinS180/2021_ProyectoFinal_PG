@@ -14,5 +14,10 @@ class UsuarioDAO{
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
     }
+    public function ConsultaUsuarios($branchNo){
+        $sql = "SELECT COUNT (correo) from usuarios where correo = '$branchNo'";
+        $res = mysqli_query($this->conexion->getConexion(), $sql);
+        return $res;
+    }
 }
 ?>

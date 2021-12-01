@@ -1,3 +1,10 @@
+<?php
+session_start(); 
+if($_SESSION['u_valido'] == false ){
+header('location: login.html');
+} 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +19,21 @@
 </head>
 
 <body>
+    <script>
+        function alertPvto(){
+            alert("Aceptar para Eliminar"); 
+        }
+    </script>
 
 
     <div class="encabezado">
         <center> <h2> Aqui va el Header</h2></center> 
     </div>
+    <div class="alert alert-success"  id= "alertaAgregar" data-bs-keyboard="false" tabindex="-1" role="alert" 
+style="width: 50%; margin: auto; text-align:center">
+  ¡REGISTRO AGREGADO EXITOSAMENTE!
+</div>
+<br>
     <div class="container">
         <div class="row">
             <div class="col-5">
@@ -85,7 +102,7 @@
                                         "<td>" . $fila['city'] . "</td>" .
                                         "<td>" . $fila['postcode'] . "</td>" .
                                         "<td> <a class='btn btn-info' href='formulario_modificaciones.php?id=". $fila["branchNo"] ."' data-bs-toggle='modal'>SELECCIONAR1</a></td>".
-                                        "<td> <a href='../controlador/procesar_bajas.php?branchNo=%s' class= 'btn btn-danger'> ELIMINAR</a>  </td> </tr>", $fila['branchNo']);
+                                        "<td> <a href='../controlador/procesar_bajas.php?branchNo=%s' class= 'btn btn-danger' onclick='return alertPvto()'> ELIMINAR</a>  </td> </tr>", $fila['branchNo']);
                                 }
                             } else {
                                 echo "SIN registros para mostrar";

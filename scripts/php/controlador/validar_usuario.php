@@ -17,10 +17,10 @@
             
             $u=$_POST['inputEmail'];
             $p=$_POST['inputPassword'];
-            $u_cifrado = sha1($u); 
+            //$u_cifrado = sha1($u); 
             $p_cifrado = sha1($p);
             
-                $sql = "SELECT * FROM usuarios where correo ='$u_cifrado' AND contra ='$p_cifrado'"; 
+                $sql = "SELECT * FROM usuarios where correo ='$u' AND contra ='$p_cifrado'"; 
 
                 $res = mysqli_query($conexion, $sql);
 
@@ -28,10 +28,11 @@
                     session_start(); 
                     $_SESSION['usuario'] = $u; 
                     $_SESSION['u_valido'] = true; 
-                    header('location:../vista/formulario_principal.php');
+                    header('location:../vista/header.php');
                 }else{
-                    
                     header('location: ../vista/login.html');
+                    echo "<script> alert('Correo o Contraseña Incorrectos')</script>";
+                    
                     //echo "MEJOR ME DEDICO A LAS REDES "; 
                 }
                 //echo "entrando al if";      
