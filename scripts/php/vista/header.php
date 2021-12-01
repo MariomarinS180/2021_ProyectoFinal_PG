@@ -4,7 +4,9 @@ if($_SESSION['u_valido'] == false ){
 header('location: login.html');
 } 
 ?>
-
+ <?php
+    require_once('header2.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +17,7 @@ header('location: login.html');
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <script src="../../javascript/validacionBranch.js"></script>
+    <link rel="stylesheet" href="../../../estilos/header.css" id="theme-stylesheet">
     <title>Dreamhome Inicio</title>
 </head>
 
@@ -24,7 +27,6 @@ header('location: login.html');
             alert("Aceptar para Eliminar"); 
         }
     </script>
-
 
     <div class="encabezado">
         <center> <h2> Aqui va el Header</h2></center> 
