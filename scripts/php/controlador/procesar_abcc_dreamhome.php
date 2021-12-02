@@ -3,12 +3,14 @@ include('../modelo/dreamhomeDAO.php');
 
 $dao = new DreamhomeDAO(); 
 
-    $branch = $_POST["txtBranch"];
-    $st = $_POST["txtStreet"];
-    $cy = $_POST["txtCity"];
-    $pc= $_POST["txtpostCode"];
+    $street = $_POST["txtStreet"];
+    $city = $_POST["txtCity"];
+    $postcode= $_POST["txtpostCode"];
+    $type = $_POST['typo'];
+    $rooms = $_POST['txtCuarto'];
+    $rent = $_POST['txtRenta'];
     
-    $res = $dao->agregarBranch($branch,$st,$cy,$pc);
+    $res = $dao->agregarPropiedad($street,$city, $postcode, $type, $rooms, $rent); 
     if($res){
         //echo "YA CASI SOY INGENIERO INMORTAL !!!!";
         header('location: ../vista/header.php');

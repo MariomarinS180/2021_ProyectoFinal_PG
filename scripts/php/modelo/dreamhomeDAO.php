@@ -25,8 +25,8 @@ class DreamhomeDAO{
     }
 
 
-    public function eliminarAlumno($branch){
-        $sql = "DELETE FROM branch WHERE branchNo='$branch'";
+    public function eliminarAlumno($propertyNo){
+        $sql = "DELETE FROM propertyForRent WHERE propertyNo=$propertyNo";
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
     }
@@ -43,7 +43,7 @@ class DreamhomeDAO{
     }
 
     public function mostrar(){
-        $sql = "SELECT * FROM branch";
+        $sql = "SELECT * FROM propertyForRent";
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
     }

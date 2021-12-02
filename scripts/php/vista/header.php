@@ -28,64 +28,71 @@ header('location: login.html');
         }
     </script>
 
-    <div class="encabezado">
-        <center> <h2> Aqui va el Header</h2></center> 
-    </div>
-    <div class="alert alert-success"  id= "alertaAgregar" data-bs-keyboard="false" tabindex="-1" role="alert" 
-style="width: 50%; margin: auto; text-align:center">
-  ¡REGISTRO AGREGADO EXITOSAMENTE!
-</div>
-<br>
+
+    <br>
     <div class="container">
         <div class="row">
-            <div class="col-5">
+            <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        Departamentos
+                        Agrega tu Vivienda
                     </div>
                     <div class="card-body">
                         <form action="../controlador/procesar_abcc_dreamhome.php" method="POST">
                             <div class="mb-3">
-                                <label for="txtBranch" class="form-label">BranchNo</label>
-                                <input type="text" class="form-control" name="txtBranch" id="txtBranch" placeholder="4 Caracteres">
+                                <label for="txtStreet" class="form-label">Calle</label>
+                                <input type="text" class="form-control" name="txtStreet" id="txtStreet" placeholder="4 Caracteres">
                             </div>
 
                             <div class="mb-3">
-                                <label for="txtStreet" class="form-label">Street</label>
-                                <input type="text" class="form-control" name="txtStreet" id="txtStreet" placeholder="Nombre de la Calle">
+                                <label for="txtCity" class="form-label">Ciudad</label>
+                                <input type="text" class="form-control" name="txtCity" id="txtCity" placeholder="Nombre de la Calle">
+                            </div>
+
+                            <div class="mb-3" class="valid-feedback">
+                                <label for="txtpostCode" class="form-label">Código Postal</label>
+                                <input type="text" class="form-control" name="txtpostCode" id="txtpostCode" placeholder="Nombe de la Ciudad">
                             </div>
 
                             <div class="mb-3">
-                                <label for="txtCity" class="form-label">City</label>
-                                <input type="text" class="form-control" name="txtCity" id="txtCity" placeholder="Nombe de la Ciudad">
+                                <label for="txtTipo" class="form-label">Tipo de Vivienda</label>
+                                <select class="form-select" id="typo" name="typo">
+                                    <option value="casa">Casa</option>
+                                    <option value="depa">Departamento</option>
+                                </select>
                             </div>
 
                             <div class="mb-3">
-                                <label for="txtpostCode" class="form-label">PostCode</label>
-                                <input type="text" class="form-control" name="txtpostCode" id="txtpostCode" placeholder="Codigo Postal">
+                                <label for="txtpostCode" class="form-label">Cantidad de Cuartos</label>
+                                <input type="text" class="form-control" name="txtCuarto" id="txtpostCode" placeholder="Codigo Postal">
                             </div>
 
+                            <div class="mb-3">
+                                <label for="txtpostCode" class="form-label">Renta</label>
+                                <input type="text" class="form-control" name="txtRenta" id="txtpostCode" placeholder="Codigo Postal">
+                            </div>
+                            <br>
                             <div class="btn-group" role="group">
                                 <button type="submit" class="btn btn-success" onclick= " return validacionHeader()">Agregar</button>
-                                <button id="btnEditar" type="button" class="btn btn-warning">Editar</button>
-                                <button id="btnCancelar" type="button" class="btn btn-primary">Cancelar</button>
+                                <button id="btnCancelar" type="button" class="btn btn-">Borrar Todo</button>
                             </div>
                         </form>
                     </div>
-                    <div class="card-footer text-muted">
-                        Footer
-                    </div>
                 </div>
             </div>
-            <div class="col-7">
+            <div class="col-12" id="tablaRegistros">
                 <table class="table table-striped table-bordered table-hover" id="tablaReg">
                     <thead>
                         <tr>
-                            <th>Branch No</th>
-                            <th>Stree</th>
-                            <th>City</th>
-                            <th>Postcode</th>
-                            <th>Acciones</th>
+                            <th>Num Propiedad</th>
+                            <th>Calle</th>
+                            <th>Ciudad</th>
+                            <th>Código Postal</th>
+                            <th>Vivienda</th>
+                            <th>Cuartos</th>
+                            <th>Renta</th>
+                            <th>Modificar Registro</th>
+                            <th>Eliminar Registro</th>
                         </tr>
                     </thead>
                     <tbody id="tabla">
@@ -99,12 +106,15 @@ style="width: 50%; margin: auto; text-align:center">
                                 //echo "<table class= 'table table-striped table-bordered'>";
                                 while ($fila = mysqli_fetch_assoc($res)) {
                                     printf("<tr>
-                                         <td>" . $fila['branchNo'] . "</td>" .
+                                         <td>" . $fila['propertyNo'] . "</td>" .
                                         "<td>" . $fila['street'] . "</td>" .
                                         "<td>" . $fila['city'] . "</td>" .
                                         "<td>" . $fila['postcode'] . "</td>" .
-                                        "<td> <a class='btn btn-info' href='formulario_modificaciones.php?id=". $fila["branchNo"] ."' data-bs-toggle='modal'>SELECCIONAR1</a></td>".
-                                        "<td> <a href='../controlador/procesar_bajas.php?branchNo=%s' class= 'btn btn-danger' onclick='return alertPvto()'> ELIMINAR</a>  </td> </tr>", $fila['branchNo']);
+                                        "<td>" . $fila['typo'] . "</td>" .
+                                        "<td>" . $fila['rooms'] . "</td>" .
+                                        "<td>" . $fila['rent'] . "</td>" .
+                                        "<td> <a class='btn btn-info' href='formulario_modificaciones.php?id=". $fila["propertyNo"] ."' data-bs-toggle='modal'>SELECCIONAR</a></td>".
+                                        "<td> <a href='../controlador/procesar_bajas.php?propertyNo=%s' class= 'btn btn-danger' onclick='return alertPvto()'> ELIMINAR</a>  </td> </tr>", $fila['propertyNo']);
                                 }
                             } else {
                                 echo "SIN registros para mostrar";
