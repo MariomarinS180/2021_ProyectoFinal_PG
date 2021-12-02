@@ -14,6 +14,17 @@ class DreamhomeDAO{
         echo json_decode($res);
         return $res;
     }
+
+    public function agregarPropiedad($street, $city, $postcode, $type, $rooms, $rent){
+        $sql = "INSERT INTO propertyforrent (street, city, postcode, typo, rooms, rent) 
+        VALUES ('$street', '$city', '$postcode', '$type', $rooms, $rent)";
+        $res = mysqli_query($this->conexion->getConexion(), $sql);
+        //echo json_decode($res);
+        return $res;
+        ;
+    }
+
+
     public function eliminarAlumno($branch){
         $sql = "DELETE FROM branch WHERE branchNo='$branch'";
         $res = mysqli_query($this->conexion->getConexion(), $sql);
@@ -31,12 +42,10 @@ class DreamhomeDAO{
         return $res;
     }
 
-
     public function mostrar(){
         $sql = "SELECT * FROM branch";
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
     }
-
 }
 ?>

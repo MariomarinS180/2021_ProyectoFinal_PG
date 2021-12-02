@@ -9,10 +9,8 @@ $dao = new DreamhomeDAO();
     $pc= $_POST["txtpostCode"];
     
     $res = $dao->agregarBranch($branch,$st,$cy,$pc);
-
     if($res){
         //echo "YA CASI SOY INGENIERO INMORTAL !!!!";
-        
         header('location: ../vista/header.php');
         //OPCION 1
         //<form

@@ -1,54 +1,3 @@
-/*
-==========================================================
-==========================================================
-
-Bootstrap 5 Admin Template
-
-https://bootstrapious.com/p/admin-template
-
-==========================================================
-==========================================================
-*/
-/*!
- * Bootstrap v5.0.2 (https://getbootstrap.com/)
- * Copyright 2011-2021 The Bootstrap Authors
- * Copyright 2011-2021 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
-:root {
-  --bs-blue: #0d6efd;
-  --bs-indigo: #6610f2;
-  --bs-purple: #6f42c1;
-  --bs-pink: #d63384;
-  --bs-red: #ff7676;
-  --bs-orange: #ffc36d;
-  --bs-yellow: #eef157;
-  --bs-green: #28a745;
-  --bs-teal: #20c997;
-  --bs-cyan: #17a2b8;
-  --bs-white: #fff;
-  --bs-gray: #6c757d;
-  --bs-gray-dark: #343a40;
-  --bs-primary: #796AEE;
-  --bs-secondary: #6c757d;
-  --bs-success: #28a745;
-  --bs-info: #17a2b8;
-  --bs-warning: #ffc107;
-  --bs-danger: #dc3545;
-  --bs-light: #f8f9fa;
-  --bs-dark: #343a40;
-  --bs-darkBlue: #2f333e;
-  --bs-sidebar-bg: #30323e;
-  --bs-red: #ff7676;
-  --bs-yellow: #eef157;
-  --bs-faintGreen: #54e69d;
-  --bs-orange: #ffc36d;
-  --bs-violet: #796AEE;
-  --bs-paleBlue: #85b4f2;
-  --bs-font-sans-serif: "Poppins", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-}
 
 *,
 *::before,
@@ -211,12 +160,12 @@ sup {
 }
 
 a {
-  color: #796AEE;
+  color: #1e00ff;
   text-decoration: underline;
 }
 
 a:hover {
-  color: #3b25e6;
+  color: #1e00ff;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
