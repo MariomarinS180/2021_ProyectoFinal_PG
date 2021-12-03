@@ -30,39 +30,43 @@ header('location: login.html');
         $aDAO = new DreamhomeDAO();
         $id = $_GET["id"];
         $res = $aDAO->mostrarAlumnosPorNc($id);
-        $ruta = "../controlador/modificar.php";
+        //$ruta = "../controlador/procesar_modificaciones";
         //var_dump($res);
 
         if(mysqli_num_rows($res)>0){
 
-    
                    echo "<form action='../controlador/procesar_modificaciones.php' method='post'><br><table id='tabla' class='display table table-hover text-nowrap' style='width:50%'>
                         <thead>
                             <tr>
-                                
-                                <th>Street</th>
-                                <th>City</th>
-                                <th>PostCode</th>
-                                
-                                
+                                <th>Calle</th>
+                                <th>Ciudad</th>
+                                <th>Código Postal</th>
+                                <th>Vivienda</th>
+                                <th>Cuartos</th>
+                                <th>Renta</th>
                             </tr>
                         </thead>";
             
 
             while($fila = mysqli_fetch_assoc($res)){
                 printf("<tr>
-                <td><input type='hidden' value='". $fila["branchNo"]."' name='num'></input>
+                <td><input type='hidden' value='". $fila["propertyNo"]."' name='prop'></input>
 
-                <input type='text' value='". $fila["street"]."' name='nom'></input></td>".
+                <input type='text' value='". $fila["street"]."' name='street'></input></td>".
 
-                "<td><input type='text' value='". $fila["city"]."' name='pa'></input></td>".
+                "<td><input type='text' value='". $fila["city"]."' name='c'></input></td>".
 
-                "<td><input type='text' value='". $fila["postcode"]."' name='sa'></input></td>".
+                "<td><input type='text' value='". $fila["postcode"]."' name='pc'></input></td>".
+
+                "<td><input type='text' value='". $fila["typo"]."' name='ty'></input></td>".
+
+                "<td><input type='text' value='". $fila["rooms"]."' name='roms'></input></td>".
+
+                "<td><input type='text' value='". $fila["rent"]."' name='rn'></input></td>".
 
                 "<td><input type='submit' value='Actualizar'></input></td>"  
                                 
             );
-
             }
 
         }else{

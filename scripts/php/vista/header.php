@@ -19,6 +19,11 @@ header('location: login.html');
     <script src="../../javascript/validacionBranch.js"></script>
     <link rel="stylesheet" href="../../../estilos/header.css" id="theme-stylesheet">
     <title>Dreamhome Inicio</title>
+
+    <!-- CDN  PARA LA TABLA PERSONALIZADA -->
+    <link href="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
+    
 </head>
 
 <body>
@@ -27,6 +32,7 @@ header('location: login.html');
             alert("Aceptar para Eliminar"); 
         }
     </script>
+
 
 
     <br>
@@ -80,8 +86,9 @@ header('location: login.html');
                     </div>
                 </div>
             </div>
-            <div class="col-12" id="tablaRegistros">
-                <table class="table table-striped table-bordered table-hover" id="tablaReg">
+
+            <div class="col-12">
+                <table id="tabla" class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
                             <th>Num Propiedad</th>
@@ -95,7 +102,7 @@ header('location: login.html');
                             <th>Eliminar Registro</th>
                         </tr>
                     </thead>
-                    <tbody id="tabla">
+                    <tbody>
                         <tr>
                             <?php
                             include('../modelo/dreamhomeDAO.php');
@@ -117,7 +124,7 @@ header('location: login.html');
                                         "<td> <a href='../controlador/procesar_bajas.php?propertyNo=%s' class= 'btn btn-danger' onclick='return alertPvto()'> ELIMINAR</a>  </td> </tr>", $fila['propertyNo']);
                                 }
                             } else {
-                                echo "SIN registros para mostrar";
+                                echo "SIN REGISTROS PARA MOSTRAR";
                             }
 
                             ?>
@@ -128,8 +135,10 @@ header('location: login.html');
         </div>
     </div>
 
-
-
+    <script>
+    var tabla = document.querySelector('#tabla');
+    var dataTable = new DataTable(tabla);
+</script>
 </body>
 
 </html>

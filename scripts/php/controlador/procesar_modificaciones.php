@@ -1,14 +1,18 @@
 <?php
 include('../modelo/dreamhomeDAO.php');
 $dao = new DreamhomeDAO(); 
-$branchNo  = $_POST['num'];
-$steet = $_POST['nom'];
-$city = $_POST['pa'];
-$postCode = $_POST['sa'];
+$propertyNo = $_POST['prop'];
+$street = $_POST["street"];
+$city = $_POST["c"];
+$postcode= $_POST["pc"];
+$type = $_POST['ty'];
+$rooms = $_POST['roms'];
+$rent = $_POST['rn'];
 
-$res = $dao->modificarBranch($branchNo,$steet,$city,$postCode);     
-var_dump($res = true); 
-if($res){
+$res = $dao->modificarApartamento($propertyNo, $street, $city, $postcode, $type, $rooms, $rent); 
+
+//var_dump($res = true); 
+if($res =true){
 header('location:../vista/header.php');
 }else{
 echo "MEJOR ME DEDICO A LAS REDES";

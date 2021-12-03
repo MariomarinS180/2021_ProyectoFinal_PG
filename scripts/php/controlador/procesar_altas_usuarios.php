@@ -2,8 +2,8 @@
 include('usuariosDAO.php');
 include('../conexionesBD/conexionBD_usuarios.php'); 
 
-$miConexion = new ConexionBDUsuarios();
-$laConexion = $miConexion->getConexion(); 
+$res = new ConexionBDUsuarios();
+//$laConexion = $miConexion->getConexion(); 
 
 
 $uDAO = new UsuarioDAO();
@@ -13,14 +13,9 @@ $fecha = $_POST["fecha"];
 $correo = $_POST["correo_usu"];
 $contra = $_POST["pass_usu"];
 
-$consulta = "SELECT COUNT(correo) FROM usuarios WHERE correo='$correo'";
-$resConexion = mysqli_query($laConexion, $consulta);
+//$consulta = "SELECT COUNT(correo) FROM usuarios WHERE correo='$correo'";
+//$resConexion = mysqli_query($laConexion, $consulta);
 
-
-if (mysqli_num_rows($resConexion) == 1) { 
-    echo "<script> alert('A la Riata'); </script>";
-    header('location: ../../../index.html');
-} else {
      $res = $uDAO->agregarUsuario($nombre, $p1, $fecha, $correo, sha1($contra));
      if ($res = true) {
         //echo "YA CASI SOY INGENIERO INMORTAL !!!!";
@@ -36,7 +31,7 @@ if (mysqli_num_rows($resConexion) == 1) {
         //enviar un mensaje de FALLO a traves de SESIONES
     }
 
-}
-mysqli_free_result($resConexion);
-mysqli_close($laConexion);
+
+//mysqli_free_result($resConexion);
+//mysqli_close($laConexion);
 ?>

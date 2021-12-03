@@ -30,14 +30,14 @@ class DreamhomeDAO{
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
     }
-    public function modificarBranch($branchNo, $street, $city, $postcode){
-        $sql = "UPDATE branch SET street= '$street', city='$city', postCode='$postcode' 
-        WHERE branchNo = '$branchNo'"; 
+    public function modificarApartamento($propertyNo, $street, $city, $postcode, $type, $rooms, $rent){
+        $sql = "UPDATE propertyForRent SET street= '$street', city='$city', postCode='$postcode', 
+        typo='$type', rooms=$rooms, rent=$rent WHERE propertyNo = $propertyNo"; 
         $res = mysqli_query($this->conexion->getConexion(),$sql); 
         return $res; 
     }
-    public function mostrarAlumnosPorNc($nc){
-        $sql = "SELECT * FROM branch where branchNo ='$nc'";
+    public function mostrarAlumnosPorNc($pn){
+        $sql = "SELECT * FROM propertyForRent where propertyNo ='$pn'";
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         return $res;
     }
