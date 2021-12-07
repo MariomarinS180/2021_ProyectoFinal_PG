@@ -61,7 +61,7 @@
         <!-- Side Navbar -->
         <nav class="side-navbar z-index-40">
           <!-- Sidebar Header-->
-          <div class="sidebar-header d-flex align-items-center py-4 px-3"><img class="avatar shadow-0 img-fluid rounded-circle" src="img/avatar-1.jpg" alt="...">
+          <div class="sidebar-header d-flex align-items-center py-4 px-3"><img class="avatar shadow-0 img-fluid rounded-circle" src="../../../imagenes/avatar_home.png" alt="...">
             <div class="ms-3 title">
               <h1 class="h4 mb-2">Mark Stephen</h1>
               <p class="text-sm text-gray-500 fw-light mb-0 lh-1">Web Designer</p>
