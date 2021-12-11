@@ -1,14 +1,15 @@
 <?php
-session_start(); 
-if($_SESSION['u_valido'] == false ){
-header('location: login.html');
-} 
+session_start();
+if ($_SESSION['u_valido'] == false) {
+    header('location: login.html');
+}
 ?>
- <?php
-    require_once('header2.php');
+<?php
+require_once('header2.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="shortcut icon" href="../../../imagenes/Logo_Dreamhome.png" type="image/x-icon">
     <meta charset="UTF-8">
@@ -24,13 +25,13 @@ header('location: login.html');
     <!-- CDN  PARA LA TABLA PERSONALIZADA -->
     <link href="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
-    
+
 </head>
 
 <body>
     <script>
-        function alertPvto(){
-            alert("Aceptar para Eliminar"); 
+        function alertPvto() {
+            alert("Aceptar para Eliminar");
         }
     </script>
 
@@ -80,7 +81,7 @@ header('location: login.html');
                             </div>
                             <br>
                             <div class="btn-group" role="group">
-                                <button type="submit" class="btn btn-success" onclick= " return validacionHeader()">Agregar</button>
+                                <button type="submit" class="btn btn-success" onclick=" return validacionHeader()">Agregar</button>
                                 <button id="btnCancelar" type="button" class="btn btn-">Borrar Todo</button>
                             </div>
                         </form>
@@ -121,7 +122,7 @@ header('location: login.html');
                                         "<td>" . $fila['typo'] . "</td>" .
                                         "<td>" . $fila['rooms'] . "</td>" .
                                         "<td>" . $fila['rent'] . "</td>" .
-                                        "<td> <a class='btn btn-info' href='formulario_modificaciones.php?id=". $fila["propertyNo"] ."' data-bs-toggle='modal'>SELECCIONAR</a></td>".
+                                        "<td> <a class='btn btn-info' href='formulario_modificaciones.php?id=" . $fila["propertyNo"] . "' data-bs-toggle='modal'>SELECCIONAR</a></td>" .
                                         "<td> <a href='../controlador/procesar_bajas.php?propertyNo=%s' class= 'btn btn-danger' onclick='return alertPvto()'> ELIMINAR</a>  </td> </tr>", $fila['propertyNo']);
                                 }
                             } else {
@@ -136,10 +137,12 @@ header('location: login.html');
         </div>
     </div>
 
+    <script src="front.js"></script>
+
     <script>
-    var tabla = document.querySelector('#tabla');
-    var dataTable = new DataTable(tabla);
-</script>
+        var tabla = document.querySelector('#tabla');
+        var dataTable = new DataTable(tabla);
+    </script>
 </body>
 
 </html>
