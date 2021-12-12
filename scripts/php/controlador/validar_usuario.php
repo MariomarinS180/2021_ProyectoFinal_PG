@@ -7,8 +7,10 @@
     //var_dump($conexion); 
     //inputEmail
     //inputPassword
-    //echo $_POST['inputEmail'];
+   
     //echo $_POST['inputPassword'];
+    
+
     
 
     if($conexion){
@@ -30,17 +32,14 @@
                     $_SESSION['u_valido'] = true; 
                     header('location:../vista/header.php');
                 }else{
-                    header('location: ../vista/login.html');
-                    echo "<script> alert('Correo o Contraseña Incorrectos')</script>";
-                    
+                    header('location: ../vista/login.php');
                     //echo "MEJOR ME DEDICO A LAS REDES "; 
                 }
                 //echo "entrando al if";      
         }else{
-            echo "ERROR en Variables o están vacias";
+            include("../vista/login.php");
+            //echo "<p> INTRODUZCA LOS CAMPOS </p>";
         }
-
     }else{
         echo "SIN CONEXION"; 
     }
-?>
