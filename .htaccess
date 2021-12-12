@@ -1,1 +1,6 @@
+Options +FollowSymLinks
+Options All -Indexes
 ErrorDocument 404 http://localhost/proyecto/repositorio/404.php
+
+RewriteEngine On
+RewriteRule ^modificaciones/([0-9]+)$ scripts/php/vista/formulario_modificaciones.php?id=$1

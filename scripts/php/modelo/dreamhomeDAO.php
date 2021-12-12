@@ -21,7 +21,7 @@ class DreamhomeDAO{
         $res = mysqli_query($this->conexion->getConexion(), $sql);
         //echo json_decode($res);
         return $res;
-        ;
+        
     }
 
 

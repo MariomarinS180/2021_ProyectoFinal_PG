@@ -1,16 +1,16 @@
 function validarLoginConAlert(){
     var contra = document.getElementById('inputPassword');
     var pass = document.getElementById('inputPassword');
-        if (pass.value !== '') {
+        if (pass.value === '') {
             $(document).ready(function () {
-                $('#alertaAgregar').html("Contraseña Insegura").addClass("alert alert-danger");
+                $('#alertaAgregar').html("Introduzca la Contraseña").addClass("alert alert-danger");
                 return false;
             });
-        }else{
+        }else if(contra.value === ''){
             $(document).ready(function () {
-                $('#alertaAgregar').html("Contraseña Segura").addClass("alert alert-danger");
+                $('#alertaAgregar').html("Introduzca la Contraseña").addClass("alert alert-danger");
                 return false;
-            }); 
+            });
         }
         return true;
 }

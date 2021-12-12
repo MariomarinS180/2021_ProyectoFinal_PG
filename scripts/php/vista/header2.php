@@ -13,9 +13,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- Choices CSS-->
-  <link rel="stylesheet" href="vendor/choices.js/public/assets/styles/choices.min.css">
+  
   <!-- theme stylesheet-->
-  <link rel="stylesheet" href="../../../estilos/header.css" id="theme-stylesheet">
+  <link rel="stylesheet" href="../../../estilos/style.default.css" id="theme-stylesheet">
   <!-- Custom stylesheet - for your changes-->
   <link rel="shortcut icon" href="../../../imagenes/Logo_Dreamhome.png" type="image/x-icon">
 </head>

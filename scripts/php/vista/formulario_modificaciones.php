@@ -5,6 +5,10 @@ if ($_SESSION['u_valido'] == false) {
     header('location: login.html');
 }
 ?>
+<?php
+echo $_GET["id"]; 
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">

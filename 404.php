@@ -66,7 +66,7 @@
 		<h1>ERROR 404 X_X</h1>
 		<p> PÁGINA NO DISPONIBLE. ¡¡¡LÁRGATE!!!
 		</p>
-		<a href="index.html" class="boton">
+		<a href="index.php" class="boton">
 			LLÉGALE POR DONDE VENISTE
 		</a>
 		<img src="img404_dino.png">

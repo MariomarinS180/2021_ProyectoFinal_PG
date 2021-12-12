@@ -63,7 +63,7 @@
                         <li class="nav-item"><a class="nav-link link text-white display-4"
                                 href="index.html#contacts2-1r">CONTACTO</a></li>
                         <li class="nav-item"><a class="nav-link link text-white display-4"
-                                href="scripts/php/vista/login.html">INICIAR SESIÓN</a></li>
+                                href="scripts/php/vista/login.php">INICIAR SESIÓN</a></li>
                     </ul>
 
                     <div class="navbar-buttons mbr-section-btn">
